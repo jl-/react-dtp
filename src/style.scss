@@ -1,0 +1,185 @@
+@import '~libs/iconfont/iconfont.css';
+$dtp_padding: 1rem;
+$dc_width: 1.6rem;
+$dtp_width: $dtp_padding * 2 + $dc_width * 7;
+$this_color: black;
+$brand--primary: #4285f4;
+$green--lime: #2ACC7D;
+$prev_color: lighten($this_color, 60%);
+$next_color: lighten($this_color, 60%);
+@mixin color-variant($color: null, $background-color: null, $border-color: null) {
+  color: $color;
+  background-color: $background-color;
+  border-color: $border-color;
+}
+
+.dtp-cell {
+  display: inline-block;
+  text-align: center;
+  cursor: pointer;
+  font-weight: bolder;
+  border-radius: 0.2em;
+}
+
+// root
+.dtp {
+  box-sizing: border-box;
+  letter-spacing: 0;
+  width: $dtp_width;
+  padding: $dtp_padding;
+  box-shadow: 0 0 4px 1px rgba(0,0,0,0.2);
+  // year cells wrapper, month cells wrapper, date cells wrapper
+  &-ycs, &-mcs, &-dcs {
+    padding: 0;
+    margin: 0;
+  }
+  &__mc, &__yc {
+    padding-top: 0.4em;
+    padding-bottom: 0.4em;
+  }
+}
+
+// header ctrl
+.dtp {
+  // header ctrl wrapper
+  &-hc {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    padding-top: 0.2em;
+    padding-bottom: 0.2em;
+  }
+  &-curr {
+    @extend .dtp-cell;
+    flex: 1;
+  }
+  &-prev, &-next {
+    @extend .dtp-cell;
+    padding-left: 0.4em;
+    padding-right: 0.4em;
+  }
+}
+
+// year level
+.dtp {
+  &__yc {
+    @extend .dtp-cell;
+    width: percentage(1/3);
+    &--selected {
+      @include color-variant(white, $brand--primary);
+    }
+  }
+}
+
+// month level
+.dtp {
+  &__mc {
+    @extend .dtp-cell;
+    width: percentage(1/3);
+    &--selected {
+      @include color-variant(white, $brand--primary);
+    }
+  }
+}
+
+// date level
+.dtp {
+  // date cell
+  white-space: normal;
+  &__dc {
+    @extend .dtp-cell;
+    width: $dc_width;
+    height: $dc_width;
+    line-height: $dc_width;
+    font-size: 88%;
+    // past
+    &--past {
+    }
+    // current
+    &--curr {
+      color: $green--lime;
+    }
+    // future
+    &--future {
+    }
+    // dates of previous month
+    &--prev {
+      @include color-variant($prev_color);
+    }
+    // dates of this month
+    &--this {
+      @include color-variant($this_color);
+    }
+    // dates of next month
+    &--next {
+      @include color-variant($next_color);
+    }
+    // selected
+    &--selected {
+      @include color-variant(white, $brand--primary);
+    }
+    // selected of pendingDate
+    &--this-selected {
+      //@include color-variant(white, $brand--success);
+    }
+  }
+}
+
+// weekdays flag
+.dtp {
+  &-wfs {
+  }
+  &__wf {
+    @extend .dtp__dc;
+    @include color-variant($brand--primary);
+    font-weight: bold;
+    font-size: 100%;
+  }
+}
+
+// time control
+.dtp-tc {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+  &-g {
+    display: inline-block;
+    & + & {
+      margin-left: 1em;
+    }
+  }
+
+  &__plus, &__min {
+    display: block;
+    padding: 0.6em;
+    cursor: pointer;
+    color: $brand--primary;
+    &:focus {
+      outline: 1px solid;
+    }
+  }
+  &__input {
+    outline: none;
+    width: 36px;
+    border: 1px solid;
+    border-radius: 3px;
+    text-align: center;
+    &::-webkit-inner-spin-button,
+    &::-webkit-outer-spin-button {
+      appearance: none;
+      margin: 0;
+    }
+  }
+  &__apm {
+    font-size: 80%;
+    cursor: pointer;
+    padding: 0.3em 0.5em;
+    margin-left: 2em;
+    border-radius: 3px;
+    background-color: $brand--primary;
+    color: white;
+  }
+}
+

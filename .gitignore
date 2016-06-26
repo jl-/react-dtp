@@ -1,0 +1,9 @@
+.DS_Store
+node_modules/
+dist/
+.settings/
+.idea/
+.DS_Store
+npm-debug.log
+!.gitignore
+coverage/

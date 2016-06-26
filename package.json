@@ -1,0 +1,60 @@
+{
+  "name": "react-dtp",
+  "version": "0.0.0",
+  "description": "react simple datetime picker",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "http://github.com/jl-/react-dtp.git"
+  },
+  "keywords": [
+    "react",
+    "datetime picker"
+  ],
+  "author": "jl- <jlz.cius@gmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/jl-/react-dtp/issues"
+  },
+  "main": "dist/index.js",
+  "homepage": "https://github.com/jl-/react-dtp",
+  "dependencies": {
+    "classnames": "^2.2.0"
+  },
+  "devDependencies": {
+    "autoprefixer-loader": "^3.1.0",
+    "babel-eslint": "^6.0.4",
+    "babel-loader": "^6.2.4",
+    "babel-plugin-transform-runtime": "^6.9.0",
+    "babel-polyfill": "^6.9.1",
+    "babel-preset-es2015": "^6.9.0",
+    "babel-preset-react": "^6.5.0",
+    "babel-preset-stage-0": "^6.5.0",
+    "babel-register": "^6.9.0",
+    "babel-runtime": "^6.9.2",
+    "blueimp-tmpl": "^2.5.6",
+    "css-loader": "^0.20.2",
+    "del": "^2.0.2",
+    "eslint": "^1.7.2",
+    "eslint-plugin-objects": "^1.1.1",
+    "eslint-plugin-react": "^3.6.3",
+    "file-loader": "^0.8.4",
+    "gulp": "^3.9.0",
+    "html-webpack-plugin": "^1.6.2",
+    "node-sass": "^3.3.3",
+    "normalize.css": "^4.1.1",
+    "raf": "^3.1.0",
+    "react": "^0.14.0",
+    "react-addons-transition-group": "^0.14.6",
+    "react-dom": "^0.14.0",
+    "react-hot-loader": "^1.3.0",
+    "run-sequence": "^1.1.5",
+    "sass-loader": "^3.0.0",
+    "style-loader": "^0.13.0",
+    "url-loader": "^0.5.7",
+    "webpack": "^1.12.2",
+    "webpack-dev-server": "^1.14.0"
+  }
+}
